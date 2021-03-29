@@ -5,7 +5,8 @@
       <!-- 导航栏 + 搜索框 区域 -->
       <Home-top />
       <!-- 侧边栏 + 主要内容 上中下 区域 -->
-      <Home-container />
+      <Home-container v-show="isLogin" />
+    </div>
     <div class="no-login" v-show="!isLogin">
       您当前未登录，请：<router-link to="/">前往登录或注册页面</router-link>
     </div>
