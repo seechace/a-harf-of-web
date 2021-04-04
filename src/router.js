@@ -1,19 +1,19 @@
 import {
     createRouter,
     createWebHashHistory
-} from 'vue-router'
-import welcome from './public/welcome.vue'
-import homeBase from './public/home-base.vue'
+} from 'vue-router';
+import homeBase from './public/home-base.vue';
+
 
 /**
  * 路由路径配置
  */
 const routes = [{
     path: "/",
-    component: welcome
-}, {
-    path: "/home",
     component: homeBase
+}, {
+    path: "/login",
+    component:() => import('./public/welcome.vue')
 }];
 
 

@@ -9,5 +9,5 @@ export const store = {
   // longitudeRef: ref(0) , //经度
   // latitudeRef: ref(0) , //维度
   isRegister:ref(false),//是否处于正在注册状态
-  isLogin:ref(""),//正在登录吗？
+  isLogin:ref(""),//正在登录吗？未登录则提示登录，但仍可进行基本浏览
 }

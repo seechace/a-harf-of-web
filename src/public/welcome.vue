@@ -1,10 +1,15 @@
 <template>
   <div id="welcome">
+    <!-- 返回主页 -->
+    <div class="return">
+      <router-link to="/" >仍以访客身份浏览</router-link>
+    </div>
     <!-- 背景视频 -->
     <div id="video" :style="{ height: clientHeight }">
       <video
         loop="loop"
         src="../assets/welcome/welcomeVideo.mp4"
+        poster="../assets/welcome/poster.jpeg"
         class="bgVideo"
         :width="clientWidth"
       ></video>
@@ -179,6 +184,7 @@ export default {
 #video {
   position: relative;
   overflow: hidden;
+  background-color: #2e4e7e;
 }
 .bgVideo {
   width: 2000px;
@@ -247,5 +253,17 @@ export default {
   /* transform: translateX(0px); */
   transition: all ease-in 0.3s;
 }
-
+.return {
+  position: fixed;
+  z-index: 20;
+  right: 2em;
+  top: 1em;
+  background-color: #eee;
+  color: black;
+  width: 9em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  cursor: pointer;
+}
 </style>

@@ -32,9 +32,7 @@
         :value="btnText"
         @click="goHome($event)"
       />
-      <!-- <router-link to="/home" class="btn link" 
-        >前往主页</router-link
-      > -->
+
       <input
         class="btn"
         type="button"
@@ -43,6 +41,7 @@
         @click="changeRe"
       />
     </div>
+    
   </div>
 </template>
 
@@ -79,11 +78,11 @@ export default {
           //存储登录状态
           localStorage.setItem("isLogin", "true");
           //平台通用登录状态
-          store.isLogin.value =  true ;
+          store.isLogin.value = true;
           localStorage.setItem("who", accountRef.value);
           //登录跳转
           btnTextRef.value = "登陆成功！";
-          router.push("/home");
+          router.push("/");
         } else if (response.status == "fail") {
           btnTextRef.value = "😣登录失败！";
           loginFailRef.value = true;
@@ -129,11 +128,12 @@ export default {
   border-left: 50px solid aqua;
   padding: 10px;
 }
-#login>.welcome {
+#login > .welcome {
   font-size: 50px;
   font-weight: bolder;
   line-height: 200px;
 }
+
 .loginView {
   margin-left: 50px;
 }
