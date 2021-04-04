@@ -1,8 +1,8 @@
 <template>
   <!-- 首页上方区域 -->
   <el-row  class="top">
-    <el-col :xs="8" :sm="6" :md="4" :lg="6" :xl="6" class="logout">
-      <span class="welcome" v-show="showWel"
+    <el-col :xs="14" :sm="9" :md="6" :lg="6" :xl="6" class="logout">
+      <span class="welcome none hidden-sm-and-down" v-show="showWel"
         >欢迎，亲爱的 {{ userAccount }}</span
       >
       <span class="welcome" v-show="!showWel"
@@ -24,14 +24,20 @@
           <path d="M128 303.104l750.592 0c47.104 0 84.992-38.912 84.992-84.992s-38.912-84.992-84.992-84.992L128 133.12c-47.104 0-84.992 38.912-84.992 84.992C47.104 264.192 84.992 303.104 128 303.104zM128 179.2l750.592 0c21.504 0 43.008 17.408 43.008 43.008 0 21.504-17.408 43.008-43.008 43.008L128 265.216c-21.504 0-43.008-17.408-43.008-43.008C89.088 196.608 106.496 179.2 128 179.2zM878.592 720.896 128 720.896c-47.104 0-84.992 38.912-84.992 84.992 0 47.104 37.888 84.992 84.992 84.992l750.592 0c47.104 0 84.992-38.912 84.992-84.992C964.608 759.808 925.696 720.896 878.592 720.896zM878.592 844.8 128 844.8c-21.504 0-43.008-17.408-43.008-43.008 0-21.504 17.408-43.008 43.008-43.008l750.592 0c21.504 0 43.008 17.408 43.008 43.008S904.192 844.8 878.592 844.8zM878.592 427.008 128 427.008c-47.104 0-84.992 38.912-84.992 84.992s37.888 84.992 84.992 84.992l750.592 0c47.104 0 84.992-38.912 84.992-84.992S925.696 427.008 878.592 427.008zM878.592 555.008 128 555.008c-21.504 0-43.008-17.408-43.008-43.008 0-21.504 17.408-43.008 43.008-43.008l750.592 0c21.504 0 43.008 17.408 43.008 43.008C921.6 533.504 904.192 555.008 878.592 555.008z" p-id="2051">
           </path>
         </svg>
-      <div class="show-mini-bar" v-show="showBar"> 
-        <ul class="mini-bar" @click.stop="changeShowBar">
-          <li >组件A</li>
-          <li >组件B</li>
-          <li >组件C</li>
-        </ul>
+        <div class="show-mini-bar" v-show="showBar"> 
+          <ul class="mini-bar" @click.stop="changeShowBar">
+            <li>
+              <span class="welcome none" v-show="showWel">
+                欢迎，亲爱的 <br>{{ userAccount }}
+                <hr>
+              </span>
+            </li>
+            <li >组件A</li>
+            <li >组件B</li>
+            <li >组件C</li>
+          </ul>
+        </div>
       </div>
-    </div>
   </el-row>
 
 </template>
@@ -144,13 +150,15 @@ export default {
   transition: all .3s;
 }
 .mini-bar{
-  width: 6em;
+  width: 10em;
   position: absolute;
   z-index: 2;
-  top: 2em;
-  left: -4em;
+  top: 2.2em;
+  left: -8em;
   border: 1px solid gray;
+  border-radius: 0 0 5px 5px;
   background-color: white;
+  padding: 0.2em;
 }
 .mini-bar li{
   line-height: 2em;

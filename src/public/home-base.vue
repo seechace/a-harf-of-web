@@ -7,7 +7,7 @@
        <!-- 侧边栏 + 主要内容 上中下 区域 -->
       <el-main><Home-container /></el-main>
 
-      <el-footer><Home-footer></el-footer>
+      <el-footer><Home-footer /></el-footer>
     </el-container>
   </div>
 </template>
